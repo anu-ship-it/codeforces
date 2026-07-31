@@ -42,5 +42,11 @@ for(let i = 0; i < teas.length; i++){
     uppcaseTeas.push(teas[i].toUpperCase())
 }
 // Problem: Use a for loop to find the tea name with the most characters.
-
-// Problem:
+let longestTea = ""
+for(let i = 0; i < teas.length; i++){
+    if(teas[i].length > longestTea.length){
+        longestTea = teas[i]
+    }
+}
+// Problem: Use a for loop to reverse the order of teas in the array.
+const reversedArray = []

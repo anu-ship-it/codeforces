@@ -50,3 +50,6 @@ for(let i = 0; i < teas.length; i++){
 }
 // Problem: Use a for loop to reverse the order of teas in the array.
 const reversedArray = []
+for(let i = teas.length -1; i >= 0; i--){
+    reversedArray.push(teas[i])
+}

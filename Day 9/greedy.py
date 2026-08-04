@@ -1,0 +1,15 @@
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    s = input().strip()
+    if 2 * k > n:
+        print(-1)
+        continue
+    ans = 0
+    for i in range(k):
+        if s[i] == 'L':
+            ans += 1
+    for i in range(n - k, n):
+        if s[i] == 'R':
+            ans += 1
+    print(ans)

@@ -104,4 +104,3 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
         return dummy.next
 
 print(mergeTwoLists(None, ListNode(1, ListNode(2, ListNode(4))), ListNode(1, ListNode(3, ListNode(4)))))
-

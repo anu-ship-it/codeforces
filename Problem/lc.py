@@ -104,3 +104,19 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
         return dummy.next
 
 print(mergeTwoLists(None, ListNode(1, ListNode(2, ListNode(4))), ListNode(1, ListNode(3, ListNode(4)))))
+
+
+# Given an integer array nums sorted in non-decreasing order, 
+# remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+def removeDuplicates(self, nums: List[int]) -> int:
+    if len(nums) == 0:
+        return 0
+    i = 1
+    for j in range(1, len(nums)):
+        if nums[j] != nums[j - 1]:
+            nums[i] = nums[j]
+            i += 1
+
+    return i
+print(removeDuplicates(None, [0,0,1,1,1,2,2,3,3,4]))
+

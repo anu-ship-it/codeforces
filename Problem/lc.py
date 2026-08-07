@@ -120,3 +120,16 @@ def removeDuplicates(self, nums: List[int]) -> int:
     return i
 print(removeDuplicates(None, [0,0,1,1,1,2,2,3,3,4]))
 
+
+# Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
+# The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+
+def removeElement(self, nums, val):
+    k = 0
+    for i in range(len(nums)):
+        if nums[i] != val:
+            nums[k] = nums[i]
+            k += 1
+    return k
+print(removeElement(3,2,2,3))
+

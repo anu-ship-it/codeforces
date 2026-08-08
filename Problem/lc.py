@@ -169,6 +169,4 @@ def searchInsert(self, nums, target):
 
     return left
 nums = [3, 2, 2, 3]    
-k = removeElement(nums, 3)
-print(k)
 print(nums[:k])

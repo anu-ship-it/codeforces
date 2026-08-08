@@ -108,31 +108,36 @@ print(mergeTwoLists(None, ListNode(1, ListNode(2, ListNode(4))), ListNode(1, Lis
 
 # Given an integer array nums sorted in non-decreasing order, 
 # remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-def removeDuplicates(self, nums: List[int]) -> int:
+def removeDuplicates(nums): 
     if len(nums) == 0:
         return 0
     i = 1
-    for j in range(1, len(nums)):
+    for j in range(1, len(nums)):    
         if nums[j] != nums[j - 1]:
             nums[i] = nums[j]
             i += 1
+    return i        
 
-    return i
-print(removeDuplicates(None, [0,0,1,1,1,2,2,3,3,4]))
+nums = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4]    
+k = removeDuplicates(nums)
+print(k)
+print(nums[:k])
 
 
 # Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
 # The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
-def removeElement(self, nums, val):
+def removeElement(nums, val):
     k = 0
     for i in range(len(nums)):
         if nums[i] != val:
             nums[k] = nums[i]
             k += 1
     return k
-print(removeElement(3,2,2,3))
-
+nums = [3, 2, 2, 3]    
+k = removeElement(nums, 3)
+print(k)
+print(nums[:k])
 
 
 # Given two strings needle and haystack, return the index of the first occurence of needle in haystack, or -1 if needle is not part of haystack.

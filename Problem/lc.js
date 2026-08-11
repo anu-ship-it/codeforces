@@ -2,6 +2,7 @@
 let addBinary = function(a, b) {
     let i = a.length - 1;
     let j = b.length - 1;
+    let carry = 0;
     const result = [];
     while (i >= 0 || j >= 0 || carry > 0) {
         let sum = carry;
@@ -18,3 +19,26 @@ let addBinary = function(a, b) {
     }
     return result.reverse().join('');
 };
+console.log(addBinary("11", "1"));
+
+
+// Given a non-negative integer x, return the square root of x rounded down to the nearest integer. 
+// The returned integer should be non-negative as well.
+
+
+let mySqrt = function(x) {
+    if (x < 2) return x;
+    let left = 1;
+    let right = x;
+    while (left < right) {
+        const mid = Math.floor((left + right + 1) / 2);
+        if (mid > x / mid) {
+            right = mid - 1;
+        } else {
+            left = mid;
+        }
+    }
+    return left;
+};
+
+console.log(mySqrt(9));

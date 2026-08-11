@@ -42,3 +42,17 @@ let mySqrt = function(x) {
 };
 
 console.log(mySqrt(9));
+
+
+// Given a non-negative integer x, return the square root of x rounded down 
+// to the nearest integer (i.e. the integer part of √x). You must not use any built-in exponent function or operator (Math.sqrt, ** 0.5, etc.).
+
+let climbStairs = function(n) {
+    let a = 1, b = 1;
+    for (let i = 0; i < n; i++) {
+        [a, b] = [b, a + b];
+    }
+    return a;
+};
+console.log(climbStairs(3));
+

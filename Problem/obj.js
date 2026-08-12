@@ -61,6 +61,30 @@ console.log(teaCopy);
 
 // Problem: Add a custom method describe to the tea object that returns a description string.
 
+const tea = {
+    name: "Masala Chai",
+    type: "Black Tea",
+    origin: "India",
+    temperature: "Hot",
+
+    describe: function () {
+        if (!this.name || !this.type || !this.origin) {
+            return "Tea information is incomplete.";
+        }
+        return `${this.name} is a ${this.type} from ${this.origin}, usually served ${this.temperature}.`;
+    }
+};
+
+console.log(tea.describe());
+const incompleteTea = {
+    name: "Green Tea",
+    describe: function () {
+        if (!this.name || !this.type || !this.origin) {
+            return "Tea information is incomplete.";
+        }
+        return `${this.name} is a ${this.type} from ${this.origin}.`;
+    }
+};
 
 
 // Problem: Merge two objects representing different teas into one.

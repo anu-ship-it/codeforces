@@ -52,9 +52,15 @@ const myTeas = {
 // Problem: Create a copy of the tea object.
 
 const teaCopy = {...teas} // shallow copy
-const anotherCopy = myTeasteas  // reference
+const newObj = new SVGForeignObjectElement(myTeas);
+teaCopy.greentea.cups.one = 4;
+console.log(newObj);
 
+const anotherCopy = myTeasteas  // reference
+console.log(teaCopy);
 
 // Problem: Add a custom method describe to the tea object that returns a description string.
+
+
 
 // Problem: Merge two objects representing different teas into one.

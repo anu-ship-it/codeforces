@@ -85,6 +85,6 @@ const incompleteTea = {
         return `${this.name} is a ${this.type} from ${this.origin}.`;
     }
 };
-
+console.log(incompleteTea.describe());
 
 // Problem: Merge two objects representing different teas into one.

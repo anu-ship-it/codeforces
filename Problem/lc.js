@@ -72,3 +72,18 @@ let deleteDuplicates = function(head) {
     return head;
 };
 console.log(deleteDuplicates(1,1,2,3,3));
+
+// Given the root of binary tree, return the inorder traversal of its nodes' values.
+
+let inorderTraversal = function(root) {
+    const result = [];
+    function traverse(node) {
+        if (!node) return;
+        traverse(node.left);
+        result.push(node.val);
+        traverse(node.right);
+    }
+    traverse(root);
+    return result;
+};
+console.log(inorderTraversal(1,null,2,3));

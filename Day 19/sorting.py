@@ -20,3 +20,4 @@ for _ in range(t):
             c += 1
         rounds += 1
     print(rounds)
+    

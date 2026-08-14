@@ -87,3 +87,18 @@ let inorderTraversal = function(root) {
     return result;
 };
 console.log(inorderTraversal(1,null,2,3));
+
+// Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+// Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+function isSameTree(p, q){
+    const queue = [[p, q]];
+    while (queue.length) {
+        const [nodel, node2] = queue.shift();
+        if (!node && !node2) continue;
+        if (!nodel || !node2 || nodel.val !== node2.val) return false;
+        queue.push([nodel.left, node2.left]);
+        queue.push([node1,right, node2.right]);
+    }
+    return true;
+}

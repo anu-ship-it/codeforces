@@ -197,4 +197,18 @@ class Solution:
             digits[i] = 0    
         return [i] + digits
 
-       
+
+# Given the root of a binary tree, check wheather it is mirror of itself(i.e, symmetric around its center.)
+
+class Solution:
+    def isSymmetric(self, root):
+        def isMirror(t1, t2):
+            if t1 is None and t2 is None:
+                return True
+            if t1 is None or t2 is None:
+                return False
+            return (t1.val == t2.val and 
+                    isMirror(t1.left, t2.right) and 
+                    isMirror(t1.right, t2.left))
+        
+        return isMirror(root.left, root.right) if root else True

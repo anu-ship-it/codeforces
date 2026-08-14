@@ -212,3 +212,29 @@ class Solution:
                     isMirror(t1.right, t2.left))
         
         return isMirror(root.left, root.right) if root else True
+
+
+# Given the root of a binary tree, return its maximum depth.
+# A binary tree's maximum depth is the number of nodes along the logest path from the root node down to the farthest leaf node.
+
+from collections import deque
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        
+        queue = deque([root])
+        depth = 0
+        
+        while queue:
+            depth += 1
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+        
+        return depth
+    

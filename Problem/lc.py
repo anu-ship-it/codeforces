@@ -259,3 +259,35 @@ class Solution:
             return root
 
         return build(0, len(nums) -1)
+
+
+# Given a binary tree, determine if it is
+# Input = [3,9,20,null,null,15,7]
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isBalanced(self, root):
+        def height(node):
+            if not node:
+                return 0                     # height of empty tree is 0
+            
+            left = height(node.left)
+            if left == -1:                   # left subtree already unbalanced
+                return -1
+            
+            right = height(node.right)
+            if right == -1:                  # right subtree already unbalanced
+                return -1
+            
+            if abs(left - right) > 1:        # current node unbalanced
+                return -1
+            
+            return 1 + max(left, right)      # return real height
+        
+        return height(root) != -1

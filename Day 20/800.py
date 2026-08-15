@@ -57,4 +57,3 @@ for _ in range(t):
     s = input().strip()
     ans = min(min_to_2026(s), min_to_no_2025(s))
     print(ans)
-    

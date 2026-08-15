@@ -237,4 +237,25 @@ class Solution:
                     queue.append(node.right)
         
         return depth
-    
+
+
+# Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.
+
+class TreeNode:
+    def __init__(self):
+        self.val = self.val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def sortedArrayToBST(self, nums):
+        def build(left, right):
+            if left > right:
+                return None
+            mid = (left + right) // 2
+            root = TreeNode(nums[mid])
+            root.left = build(left, mid - 1)
+            root.right = build(mid + 1, right)
+            return root
+
+        return build(0, len(nums) -1)

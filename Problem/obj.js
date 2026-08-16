@@ -88,3 +88,20 @@ const incompleteTea = {
 console.log(incompleteTea.describe());
 
 // Problem: Merge two objects representing different teas into one.
+const greenTea = {
+    name: "Sencha",
+    type: "green",
+    origin: "Japan",
+    caffine: "medium",
+    notes: ["grassy", "umami"]
+};
+const blackTea = {
+    name: "Assam",
+    type: "black",
+    origin: "India",
+    strength: "bold",
+    notes: ["matly", "robust"]
+};
+const blendedTea = {...greenTea, ...blackTea };
+const blendedTea2 = Object.assign({}, greenTea, blackTea);
+console.log(blendedTea);

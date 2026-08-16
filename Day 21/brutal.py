@@ -9,4 +9,4 @@ def solve():
     ans = 1 - 1 - (1 - 1 - a) % g
     print(ans)
 
-solve()    
+solve()

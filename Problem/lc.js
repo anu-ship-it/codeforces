@@ -124,3 +124,16 @@ let minDepth = function(root) {
     }
     return 0;
 };
+
+
+// Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+// A leaf is a node with no children.
+
+let hasPathSum = function(root, targetSum) {
+    if (!root) return false;
+    if (!root.left && !root.right) {
+        return root.val === targetSum;
+    }
+    const remaining = targetSum - root.val;
+    return hasPathSum(root.left, remaining) || hasPathSum(root.right, remaining);
+};

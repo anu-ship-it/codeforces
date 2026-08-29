@@ -1,26 +1,27 @@
-const solve = () => {
-    const data = input.trim().split(/\s+/).map(Number);
-    let idx = 0;
-    const t = data[idx++];
-    const results = [];
-    for (let tc = 0; tc < t; tc++) {
-        const n = data[idx++];
-        const freq = new Map();
-        for (let i = 0; i < n; i++) {
-            const val = data[idx++];
-            freq.set(val, (freq.get(val) || 0) + 1);
-        }
-        let deletions = 0;
-        for (const [x, count] of freq.entries()) {
-            if (x === 0) {
-                deletions += count;
-            } else if (count < x) {
-                deletions += count;
-            } else {
-                deletions += count - x;
-            }
-        }
-        results.push(deletions);
+'use strict';
+
+const fs = require('fs');
+const input = fs.readFileSync(0, 'utf8').trim().split(/\s+/).map(Number);
+let idx = 0;
+
+const t = input[idx++];
+const out = [];
+
+for (let tc = 0; tc < t; tc++) {
+    const n = input[idx++];
+    const cnt = new Array(n + 1).fill(0);
+
+    for (let i = 0; i < n; i++) {
+        const x = input[idx++];
+        if (x >= 0 && x <= n) cnt[x]++;
     }
-    console.log(results.join('\n'));
-};
+
+    let keep = 0;
+    for (let x = 1; x <= n; x++) {
+        if (cnt[x] >= x) keep += x;
+    }
+
+    out.push(n - keep);
+}
+
+console.log(out.join('\n'));

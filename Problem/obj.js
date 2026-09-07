@@ -15,6 +15,7 @@ console.log(teas["type"]);
 
 teas.origin = "Assam"  
 // While this be added to object teas even after there is const how ?
+// Ues we can make this because const only prevents reassignment of the variable teas, but it does not make the object itself immutable. We can still modify its properties.
 
 // Problem: Change the caffeine level of the tea object to "Medium".
 

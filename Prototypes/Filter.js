@@ -16,5 +16,5 @@ if (!Array.prototype.myFilter){
     }
 }
 const arr = [1, 2, 3, 4, 5];
-const filteredArr = arr.myFilter((value) => value > 2);
+const filteredArr = arr.myFilter((value) => value % 2 == 0);
 console.log(filteredArr);

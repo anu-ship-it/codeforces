@@ -13,4 +13,4 @@ let convert = function(s, numRows) {
     }
     return rows.join("");
 };
-console.log(convert(A,1));
+console.log(convert("A",1));

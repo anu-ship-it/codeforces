@@ -128,3 +128,18 @@ function maxSubArray(arr) {
     return maxSum;
 }
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+// Array problem where array represents a number digit by-digit(In this problem wwe will be adding +1 to the last digit of the array and then present a new array)
+function plusone(digits) {
+    for (let i = digits.length-1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            return digits;
+        }
+        digits [i] = 0;
+    }
+    digits.unshifts(1);
+    return digits;
+}
+console.log(plusone([1,2,3]));

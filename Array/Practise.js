@@ -143,3 +143,32 @@ function plusone(digits) {
     return digits;
 }
 console.log(plusone([1,2,3]));
+
+// Convert Sorted Array to Binary search Tree
+function SortedArrayToBST(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+    let mid = Math.floor(arr.length / 2);
+    let root = {
+        val : arr[mid],
+        left: null,
+        right: null
+    };
+    root.left = SortedArrayToBST(arr.slice(0, mid));
+    root.right = SortedArrayToBST(arr.slice(mid + 1));
+    return root;
+}
+let root = SortedArrayToBST([-10,-3,0,5,9]);
+console.log(root);
+
+
+// Given an array where every element appears twice except one element.
+function SingleNumber(arr) {
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+        result = result ^ arr[i];
+    }
+    return result;
+}
+console.log(SingleNumber([4,1,2,1,2]))

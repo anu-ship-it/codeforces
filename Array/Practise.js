@@ -171,4 +171,6 @@ function SingleNumber(arr) {
     }
     return result;
 }
-console.log(SingleNumber([4,1,2,1,2]))
+console.log(SingleNumber([4,1,2,1,2]));
+
+// 

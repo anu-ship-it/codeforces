@@ -152,3 +152,6 @@ let generate = function(numRows) {
     }
     return result;
 };
+
+
+// Remove the double digit

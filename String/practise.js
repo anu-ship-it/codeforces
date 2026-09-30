@@ -10,3 +10,58 @@ function romanToInt(roman) {
   }
   return total;
 }
+
+
+// Reverse a string (Input: "hello" Output: "olleh")
+function reverse(str) {
+  let result = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    result += str[i];
+  }
+  return result;
+}
+console.log(reverse("hello"));
+
+// Find the length of a string without using .length
+function getLength(st) {
+  let count = 0;
+  while (st[count] !== undefined) {
+    count++;
+  }
+  return count;
+}
+console.log(getLength("Raj"));
+
+
+// Count the number of vowels in a string.
+// eg: "hello" -> 2
+function countVowels(str) {
+  let count = 0;
+  const vowels = "aeiouAEIOU";
+  for (const char of str){
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countVowels("Alpha"));
+
+// Count the vowels and consonants in a string
+
+function CountVowelsAndConsonants(s) {
+  const vowels = 'aeiou';
+  let vowelCount = 0;
+  let consonantCount = 0;
+  for (const char of s.toLowerCase()) {
+    if (char >= 'a' && char <= 'z') {
+      if (vowels.includes(char)) {
+        vowelCount++;
+      } else {
+        consonantCount++;
+      }
+    }
+  }
+  return { vowels: vowelCount, consonants: consonantCount };
+}
+console.log(CountVowelsAndConsonants("hello"));

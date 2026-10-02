@@ -173,4 +173,7 @@ function SingleNumber(arr) {
 }
 console.log(SingleNumber([4,1,2,1,2]));
 
-// 
+// Create an array containing the names "Rahul", "Aman", and "Priya". Display the complete array.
+
+let students = ["Rahul", "Aman", "Priya"];
+console.log(students);
